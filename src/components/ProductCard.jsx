@@ -11,7 +11,6 @@ export default function ProductCard({ product, onSelect }) {
   const badge = product.badge ? badgeConfig[product.badge] : null;
   const BadgeIcon = badge?.icon;
 
-  // Narx obyekt bo'lsa (pizzalar), boshlang'ich kichik narxini olamiz, aks holda oddiy narx
   const displayPrice = product.price && typeof product.price === 'object' 
     ? product.price.small 
     : product.price;
@@ -24,10 +23,10 @@ export default function ProductCard({ product, onSelect }) {
       onClick={() => onSelect(product)}
       whileHover={{ y: -4 }}
       transition={{ type: 'spring', stiffness: 300, damping: 24 }}
-      className="group flex flex-col overflow-hidden rounded-2xl bg-white text-left shadow-soft ring-1 ring-beige/60 transition-shadow duration-300 hover:shadow-soft-lg focus:outline-none focus-visible:ring-2 focus-visible:ring-softyellow-400"
+      className="group flex w-full flex-col overflow-hidden rounded-2xl bg-white text-left shadow-soft ring-1 ring-beige/60 transition-shadow duration-300 hover:shadow-soft-lg focus:outline-none focus-visible:ring-2 focus-visible:ring-softyellow-400"
     >
       {/* Image */}
-      <div className="relative aspect-[4/3] overflow-hidden bg-beige">
+      <div className="relative aspect-[4/3] w-full overflow-hidden bg-beige">
         <img
           src={product.image}
           alt={product.name}
@@ -45,21 +44,21 @@ export default function ProductCard({ product, onSelect }) {
       </div>
 
       {/* Body */}
-      <div className="flex flex-1 flex-col p-4">
-        <h3 className="font-display text-lg font-semibold leading-snug text-charcoal">
+      <div className="flex flex-1 flex-col p-4 w-full">
+        <h3 className="font-display text-base sm:text-lg font-semibold leading-snug text-charcoal line-clamp-1">
           {product.name}
         </h3>
-        <p className="mt-1.5 line-clamp-2 text-sm leading-relaxed text-charcoal/55">
+        <p className="mt-1 line-clamp-2 text-xs sm:text-sm leading-relaxed text-charcoal/55">
           {product.description}
         </p>
-        <div className="mt-3 flex items-center justify-between pt-1">
+        <div className="mt-4 flex items-center justify-between pt-1">
           <div className="flex items-baseline gap-1">
             {isObjectPrice && <span className="text-xs text-charcoal/50">dan</span>}
-            <span className="text-base font-bold text-charcoal">
+            <span className="text-sm sm:text-base font-bold text-charcoal">
               {formatPrice(displayPrice)}
             </span>
           </div>
-          <span className="text-xs font-medium text-charcoal/40 transition-colors group-hover:text-softyellow-500">
+          <span className="text-xs font-medium text-charcoal/40 transition-colors group-hover:text-softyellow-600">
             Details →
           </span>
         </div>

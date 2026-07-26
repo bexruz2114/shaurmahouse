@@ -6,13 +6,12 @@ export default function Footer({ CONTACT }) {
   return (
     <footer className="mt-16 border-t border-beige bg-beige/40 px-4 py-14 sm:px-6">
       <div className="mx-auto max-w-6xl">
-        {/* Asosiy tarmoqlar gridi */}
         <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-4 items-start">
           
           {/* 1. Brend va Logo */}
           <div className="flex flex-col items-start space-y-4 rounded-3xl bg-white/60 p-6 shadow-soft ring-1 ring-beige/60 backdrop-blur-sm sm:col-span-2 lg:col-span-1">
-            <div className="inline-flex items-center rounded-2xl bg-softyellow-400/80 px-4 py-2 shadow-soft">
-              <Logo className="h-8 w-auto" />
+            <div className="flex items-center gap-3">
+              <Logo className="h-10 w-auto" />
             </div>
             <p className="text-sm leading-relaxed text-charcoal/60">
               Mazali shaurma, pide va boshqa milliy taomlar — buyurtma asosida tez va sifatli tayyorlanadi.
@@ -90,7 +89,6 @@ export default function Footer({ CONTACT }) {
 
         </div>
 
-        {/* Pastki qism */}
         <div className="mt-12 flex flex-col items-center justify-between gap-4 border-t border-beige/80 pt-6 text-center text-xs text-charcoal/50 sm:flex-row sm:text-left">
           <p>© 2026 SHAURMAHOUSE. Barcha huquqlar himoyalangan.</p>
         </div>
