@@ -9,14 +9,14 @@ export default function ProductGrid({ products, onSelect, search, activeCategory
     : activeCategory;
 
   return (
-    <section className="px-3 py-6 sm:px-6 sm:py-10">
+    <section className="px-4 py-8 sm:px-6 sm:py-10">
       <div className="mx-auto max-w-6xl">
         <motion.h2
           key={heading}
           initial={{ opacity: 0, y: 8 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.35 }}
-          className="mb-4 sm:mb-6 font-display text-xl font-bold text-charcoal sm:text-3xl px-1"
+          className="mb-6 font-display text-2xl font-bold text-charcoal sm:text-3xl"
         >
           {heading}
         </motion.h2>
@@ -26,7 +26,7 @@ export default function ProductGrid({ products, onSelect, search, activeCategory
         ) : (
           <motion.div
             layout
-            className="grid grid-cols-2 gap-3 sm:gap-6 lg:grid-cols-3 xl:grid-cols-4"
+            className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4"
           >
             <AnimatePresence mode="popLayout">
               {products.map((product) => (

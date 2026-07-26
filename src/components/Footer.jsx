@@ -11,8 +11,8 @@ export default function Footer({ CONTACT }) {
           
           {/* 1. Brend va Logo */}
           <div className="flex flex-col items-start space-y-4 rounded-3xl bg-white/60 p-6 shadow-soft ring-1 ring-beige/60 backdrop-blur-sm sm:col-span-2 lg:col-span-1">
-            <div className="p-1">
-              <Logo className="h-10 w-auto" />
+            <div className="inline-flex items-center rounded-2xl bg-softyellow-400/80 px-4 py-2 shadow-soft">
+              <Logo className="h-8 w-auto" />
             </div>
             <p className="text-sm leading-relaxed text-charcoal/60">
               Mazali shaurma, pide va boshqa milliy taomlar — buyurtma asosida tez va sifatli tayyorlanadi.
@@ -27,11 +27,11 @@ export default function Footer({ CONTACT }) {
             <ul className="mt-4 space-y-3.5 text-sm text-charcoal/80">
               <li className="flex items-start gap-3">
                 <MapPin className="mt-0.5 h-4 w-4 shrink-0 text-softyellow-600" />
-                <span> Toʻraqoʻrgʻon, Namangan viloyati, Узбекистан </span>
+                <span>Toʻraqoʻrgʻon, Namangan viloyati, Oʻzbekiston</span>
               </li>
               <li className="flex items-center gap-3">
                 <Phone className="h-4 w-4 shrink-0 text-softyellow-600" />
-                <a href={`tel:${CONTACT.phoneRaw}`} className="font-medium transition-colors hover:text-charcoal">
+                <a href="tel:+998552525556" className="font-medium transition-colors hover:text-charcoal">
                   +998-55-252-55-56
                 </a>
               </li>
