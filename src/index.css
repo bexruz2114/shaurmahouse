@@ -1,0 +1,60 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  body {
+    font-family: 'Inter', system-ui, sans-serif;
+    background-color: #fffdf6;
+    color: #1f1f1f;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    font-family: 'Playfair Display', serif;
+  }
+}
+
+@layer utilities {
+  /* Hide scrollbar but keep scrolling for the category bar */
+  .no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+
+  /* Gradient text for the wordmark */
+  .text-gradient-gold {
+    background: linear-gradient(135deg, #d4a017 0%, #b8860b 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+}
+
+/* Custom scrollbar for the whole page */
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-track {
+  background: #f8f5ee;
+}
+::-webkit-scrollbar-thumb {
+  background: #e6dcc6;
+  border-radius: 9999px;
+  border: 2px solid #f8f5ee;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #d4c9ad;
+}
