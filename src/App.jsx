@@ -29,23 +29,29 @@ export default function App() {
 
   const visibleProducts = useMemo(() => {
     const q = search.trim().toLowerCase();
+    const safeProducts = products || [];
+
     if (q) {
-      return products.filter(
-        (p) =>
-          p.name.toLowerCase().includes(q) ||
-          p.description.toLowerCase().includes(q) ||
-          p.category.toLowerCase().includes(q) ||
-          p.ingredients.some((i) => i.toLowerCase().includes(q))
-      );
+      return safeProducts.filter((p) => {
+        const name = p?.name?.toLowerCase() || '';
+        const description = p?.description?.toLowerCase() || '';
+        const category = p?.category?.toLowerCase() || '';
+        const ingredients = p?.ingredients || [];
+
+        return (
+          name.includes(q) ||
+          description.includes(q) ||
+          category.includes(q) ||
+          ingredients.some((i) => (i?.toLowerCase() || '').includes(q))
+        );
+      });
     }
-    return products.filter((p) => p.category === activeCategory);
+    return safeProducts.filter((p) => p?.category === activeCategory);
   }, [search, activeCategory]);
 
   const handleSelectCategory = (cat) => {
     setSearch('');
     setActiveCategory(cat);
-    // Smooth-scroll the product grid into view, leaving room for the
-    // sticky header + sticky category bar.
     requestAnimationFrame(() => {
       const grid = document.getElementById('menu');
       if (grid) {
@@ -63,6 +69,8 @@ export default function App() {
         onSelectCategory={handleSelectCategory}
         onOpenMenu={() => setMenuOpen(true)}
         CONTACT={CONTACT}
+        search={search}
+        onSearchChange={setSearch}
       />
 
       <MobileMenu

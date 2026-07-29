@@ -60,7 +60,10 @@ import sos1 from "../assets/barbeque sosu.png";
 import sos2 from "../assets/gorchitsa.png";
 import sos3 from "../assets/achchiq chili sous.png";
 import sos4 from "../assets/sarimsoqli sous.png";
-
+import burger1 from "../assets/gamburger.png";
+import burger2 from "../assets/chizeburger.png";
+import burger3 from "../assets/big.png";
+import burger4 from "../assets/special.png"; 
 
 
 
@@ -78,7 +81,7 @@ export const products = [
     id: 2,
     name: 'Lazer Osh',
     category: 'Milliy Taomlar',
-    price: 35000,
+    price: 20000,
     image: 'https://s1.15min.lt/static/cache/MTAwMHg1MjMsNTUzeDMzOCw2MTYxNzksb3JpZ2luYWwsLGlkPTEwMzYyNjE4JmRhdGU9MjAyNSUyRjEwJTJGMTcsMjQyOTI4Njk1Ng==/plovas-68f1f2087af39.jpg',
     badge: null,
   },
@@ -108,7 +111,7 @@ export const products = [
   },
     {
     id: 6,
-    name: 'Qotirma',
+    name: 'Sho\'rva',
     category: 'Milliy Taomlar',
     price: 35000,
     image: ovqat5,
@@ -134,7 +137,7 @@ export const products = [
 
   // ───────────────────────── Pidelar ─────────────────────────
   {
-    id: 5,
+    id: 9,
     name: 'Xachapuri',
     category: 'Pidelar',
     price: 40000,
@@ -142,7 +145,7 @@ export const products = [
     badge: null,
   },
   {
-    id: 6,
+    id: 10,
     name: 'Pishloqli Pide',
     category: 'Pidelar',
     price: 40000,
@@ -150,7 +153,7 @@ export const products = [
     badge: null,
   },
   {
-    id: 7,
+    id: 11,
     name: 'Assorti Pide',
     category: 'Pidelar',
     price: 55000,
@@ -158,7 +161,7 @@ export const products = [
     badge: null,
   },
   {
-    id: 8,
+    id: 12,
     name: 'Farsh Pide',
     category: 'Pidelar',
     price: 55000,
@@ -166,9 +169,9 @@ export const products = [
     badge: null,
   },
 
-  // ───────────────────────── Burgerlar ─────────────────────────
+  // ───────────────────────── Turk Taomlari ─────────────────────────
   {
-    id: 9,
+    id: 13,
     name: 'Bef Fajita',
     category: 'Turk Taomlari',
     price: 40000,
@@ -176,7 +179,7 @@ export const products = [
     badge: null,
   },
   {
-    id: 10,
+    id: 14,
     name: 'Special Bonfile',
     category: 'Turk Taomlari',
     price: 38000,
@@ -184,7 +187,7 @@ export const products = [
     badge: null,
   },
   {
-    id: 11,
+    id: 15,
     name: 'Achchiq totli tovuq',
     category: 'Turk Taomlari',
     price: 35000,
@@ -192,115 +195,114 @@ export const products = [
     badge: 'new',
   },
   // ───────────────────────── Lavash va Hot-Doglar ─────────────────────────
-  {
-    id: 13,
+{
+    id: 16,
     name: 'Hot-Dog Oddiy',
     category: 'Lavash va Hot-Doglar',
-   price: { small: 15000, medium: 18000,},
+    price: { small: 15000, medium: 18000, large: 20000 },
     image: hotdog1,
     badge: null,
   },
   {
-    id: 14,
+    id: 17,
     name: 'Hot-Dog Go’shtli',
     category: 'Lavash va Hot-Doglar',
- price: { small: 18000, medium: 20000, large: 25000 },
+    price: { small: 20000, medium: 25000, large: 30000 },
     image: hotdog2,
-    badge: null,
-  },
-    {
-    id: 40,
-    name: 'Hot-Dog Sasiskalik',
-    category: 'Lavash va Hot-Doglar',
- price: { small: 15000, medium: 18000, large: 20000 },
-    image: hotdog3,
-    badge: null,
-  }, 
-   {
-    id: 42,
-    name: 'Hot-Dog Chiken',
-    category: 'Lavash va Hot-Doglar',
- price: { small: 20000, medium: 25000,},
-    image: hotdog4,
-    badge: null,
-  },
-  {
-    id: 15,
-    name: 'Lavash Oddiy',
-    category: 'Lavash va Hot-Doglar',
-    price: { small: 30000, medium: 35000, large: 40000 },
-    image: lavash1,
-    badge: null,
-  },
-  {
-    id: 19,
-    name: 'Tandir Lavash',
-    category: 'Lavash va Hot-Doglar',
-    price: { small: 30000, medium: 35000, large: 40000 },
-    image: lavash2,
-    badge:  null,
-  },
-    {
-    id: 20,
-    name: 'Tovuqli Lavash',
-    category: 'Lavash va Hot-Doglar',
-    price: { small: 30000, medium: 35000, large: 40000, big: 45000 },
-    image: lavash3,
-    badge:  null,
-  },
-  // ─────────────────────────Pizzalar ─────────────────────────
-  {
-    id: 16,
-    name: 'Peperoni Pizza',
-    category: 'Pizzalar',
-    price: { small: 80000, medium: 100000, large: 150000 },
-    image: pizza1,
-    badge: null,
-  },
-  {
-    id: 17,
-    name: 'Goshtli Pizza',
-    category: 'Pizzalar',
-    price: { small: 80000, medium: 100000, large: 150000 },
-    image: pizza2,
     badge: null,
   },
   {
     id: 18,
-    name: 'Qazili Pizza',
-    category: 'Pizzalar',
-    price: { small: 80000, medium: 100000, large: 150000 },
-    image: pizza3,
+    name: 'Hot-Dog Sasiskalik',
+    category: 'Lavash va Hot-Doglar',
+    price: { small: 15000, medium: 18000, large: 20000 },
+    image: hotdog3,
     badge: null,
   },
   {
     id: 19,
-    name: 'Assorti Pizza',
-    category: 'Pizzalar',
-    price: { small: 80000, medium: 100000, large: 150000 },
-    image: pizza4,
-    badge: 'bestseller',
+    name: 'Hot-Dog Chiken',
+    category: 'Lavash va Hot-Doglar',
+    price: { small: 20000, medium: 25000, large: 30000 },
+    image: hotdog4,
+    badge: null,
   },
   {
     id: 20,
-    name: 'Tovuqli Pizza',
-    category: 'Pizzalar',
-    price: { small: 80000, medium: 100000, large: 150000 },
-    image: pizza5,
+    name: 'Lavash Oddiy',
+    category: 'Lavash va Hot-Doglar',
+    price: { mini: 30000, small: 35000, medium: 35000, large: 40000 },
+    image: lavash1,
     badge: null,
   },
   {
     id: 21,
+    name: 'Tandir Lavash',
+    category: 'Lavash va Hot-Doglar',
+    price: { mini: 30000, small: 35000,  large: 40000 },
+    image: lavash2,
+    badge: null,
+  },
+  {
+    id: 22,
+    name: 'Tovuqli Lavash',
+    category: 'Lavash va Hot-Doglar',
+    price: { mini: 30000, small: 35000,  large: 45000 },
+    image: lavash3,
+    badge: null,
+  },
+  // ─────────────────────────Pizzalar ─────────────────────────
+ {
+    id: 23,
+    name: 'Peperoni Pizza',
+    category: 'Pizzalar',
+    price: [60000, 80000, 100000, 150000], // 4 ta narx massiv ko'rinishida
+    image: pizza1,
+    badge: null,
+  },
+  {
+    id: 24,
+    name: 'Goshtli Pizza',
+    category: 'Pizzalar',
+    price: [60000, 80000, 100000, 150000],
+    image: pizza2,
+    badge: null,
+  },
+  {
+    id: 25,
+    name: 'Qazili Pizza',
+    category: 'Pizzalar',
+    price: [60000, 80000, 100000, 150000],
+    image: pizza3,
+    badge: null,
+  },
+  {
+    id: 26,
+    name: 'Assorti Pizza',
+    category: 'Pizzalar',
+    price: [60000, 80000, 100000, 150000],
+    image: pizza4,
+    badge: 'bestseller',
+  },
+  {
+    id: 27,
+    name: 'Tovuqli Pizza',
+    category: 'Pizzalar',
+    price: [60000, 80000, 100000, 150000],
+    image: pizza5,
+    badge: null,
+  },
+  {
+    id: 28,
     name: 'Qoziqorinli Pizza',
     category: 'Pizzalar',
-    price: { small: 80000, medium: 100000, large: 150000 },
+    price: [60000, 80000, 100000, 150000],
     image: pizza6,
     badge: null,
   },
-
   // ───────────────────────── Moxitolar (Drinks) ─────────────────────────
   {
-    id: 19,
+    id: 29,
     name: 'Moxito Lime',
     category: 'Moxitolar',
    price: { small: 15000, medium: 18000,},
@@ -308,7 +310,7 @@ export const products = [
     badge: null,
   },
   {
-    id: 20,
+    id: 30,
     name: 'Moxito Qulupnay',
     category: 'Moxitolar',
    price: { small: 15000, medium: 18000,},
@@ -316,7 +318,7 @@ export const products = [
     badge: null,
   },
   {
-    id: 21,
+    id: 31,
     name: ' Moxito Ocean',
     category: 'Moxitolar',
     price: { small: 15000, medium: 12000 },
@@ -324,7 +326,7 @@ export const products = [
     badge: null,
   },
     {
-    id: 78,
+    id: 32,
     name: 'Kopmot',
     category: 'Moxitolar',
     price: { small: 15000, medium: 12000 },
@@ -334,7 +336,7 @@ export const products = [
 
   // ───────────────────────── Salatlar ─────────────────────────
   {
-    id: 22,
+    id: 33,
     name: 'Sezar Salat',
     category: 'Salatlar',
     price: 25000,
@@ -342,7 +344,7 @@ export const products = [
     badge: 'bestseller',
   },
   {
-    id: 23,
+    id: 34,
     name: 'Mujiskoy Kapriz',
     category: 'Salatlar',
     price: 25000,
@@ -350,7 +352,7 @@ export const products = [
     badge: null,
   },
   {
-    id: 24,
+    id: 35,
     name: 'Gretskiy Salat',
     category: 'Salatlar',
     price: 30000,
@@ -358,7 +360,7 @@ export const products = [
     badge: null,
   },
   {
-    id: 78,
+    id: 36,
     name: 'Sveji Salat',
     category: 'Salatlar',
     price: 15000,
@@ -368,7 +370,7 @@ export const products = [
 
   // ───────────────────────── Kfs & Fri ─────────────────────────
   {
-    id: 25,
+    id: 37,
     name: 'Kfs',
     category: 'Kfs & Fri',
     price: 25000,
@@ -376,7 +378,7 @@ export const products = [
     badge: null,
   },
   {
-    id: 26,
+    id: 38,
     name: 'Special Kfs',
     category: 'Kfs & Fri',
     price: 30000,
@@ -384,7 +386,7 @@ export const products = [
     badge: null,
   },
     {
-    id: 90,
+    id: 39,
     name: 'Achchiq Kfs',
     category: 'Kfs & Fri',
     price: 25000,
@@ -392,7 +394,7 @@ export const products = [
     badge: null,
   },
     {
-    id: 91,
+    id: 40,
     name: 'Kichik Fri',
     category: 'Kfs & Fri',
     price: 15000,
@@ -400,7 +402,7 @@ export const products = [
     badge: null,
   },
     {
-    id: 92,
+    id: 41,
     name: 'Katta Fri',
     category: 'Kfs & Fri',
     price: 20000,
@@ -408,9 +410,9 @@ export const products = [
     badge: null,
   },
 
-  // ───────────────────────── Combo ─────────────────────────
+  // ───────────────────────── Sandwichlar ─────────────────────────
   {
-    id: 27,
+    id: 42,
     name: 'Classic Sandwich',
     category: 'Sandwichlar',
     price: 25000,
@@ -418,7 +420,7 @@ export const products = [
     badge: null,
   },
   {
-    id: 28,
+    id: 43,
     name: 'Qazilik Sandwich',
     category: 'Sandwichlar',
     price: 30000,
@@ -426,7 +428,7 @@ export const products = [
     badge: null,
   },
   {
-    id: 29,
+    id: 44,
     name: 'Go`shtli Sandwich',
     category: 'Sandwichlar',
     price: 30000,
@@ -441,9 +443,42 @@ export const products = [
     image: sandvich4,
     badge: null,
   },
+  // --------------------------- Burgerlar ---------------------------
+  {
+    id: 46,
+    name: 'Gamburger',
+    category: 'Burgerlar',
+    price: 20000,
+    image: burger1, // O'zingizning rasm URL manzilingizni qo'shing
+    badge: null,
+  },
+  {
+    id: 47,
+    name: 'Cheeseburger',
+    category: 'Burgerlar',
+    price: 25000,
+    image: burger2, // O'zingizning rasm URL manzilingizni qo'shing
+    badge: null,
+  },
+  {
+    id: 48,
+    name: 'Big Burger',
+    category: 'Burgerlar',
+    price: 30000,
+    image: burger3, // O'zingizning rasm URL manzilingizni qo's  hing
+    badge: null,
+  },
+  {
+    id: 49,
+    name: 'Special Burger',
+    category: 'Burgerlar',
+    price: 35000,
+    image: burger4, // O'zingizning rasm URL manzilingizni qo'shing
+    badge: null,
+  },
   // ───────────────────────── Soslar (Sauces) ─────────────────────────
   {
-    id: 30,
+    id: 50,
     name: 'Ko`k Choy',
     category: 'Choylar',
     price: 3000,
@@ -451,7 +486,7 @@ export const products = [
     badge: null,
   },
   {
-    id: 31,
+    id: 51,
     name: 'Qora Choy',
     category: 'Choylar',
     price: 3000,
@@ -459,7 +494,7 @@ export const products = [
     badge: null,
   },
   {
-    id: 32,
+    id: 52,
     name: 'Dovchali Choy',
     category: 'Choylar',
     price: 20000,
@@ -467,7 +502,7 @@ export const products = [
     badge: null,
   },
     {
-    id: 33,
+    id: 53,
     name: 'Limon Choy',
     category: 'Choylar',
     price: 15000,
@@ -475,7 +510,7 @@ export const products = [
     badge: null,
   },
     {
-    id: 34,
+    id: 54,
     name: 'Malinali Choy',
     category: 'Choylar',
     price: 20000,
@@ -484,7 +519,7 @@ export const products = [
   },
 //  ───────────────────────── Souslar (Sauces) ─────────────────────────
   {
-    id: 35,
+    id: 55,
     name: 'Barbeque Sous',
     category: 'Souslar',
     price: 3000,
@@ -492,7 +527,7 @@ export const products = [
     badge: null,
   },
   {
-    id: 36,
+    id: 56,
     name: 'Gorchitsa Sous',
     category: 'Souslar',
     price: 3000,
@@ -500,7 +535,7 @@ export const products = [
     badge: null,
   },
   {
-    id: 37,
+    id: 57,
     name: 'Achiq chili Sous',
     category: 'Souslar',
     price: 5000,
@@ -508,7 +543,7 @@ export const products = [
     badge: null,
   },
   {
-    id: 38,
+    id: 58,
     name: 'Sarimsoqli Sariq Sous',
     category: 'Souslar',
     price: 3000,
@@ -529,6 +564,7 @@ export const categories = [
   'Salatlar',
   'Kfs & Fri',
   'Sandwichlar',
+  'Burgerlar',
   'Choylar',
   'Souslar',
 ];

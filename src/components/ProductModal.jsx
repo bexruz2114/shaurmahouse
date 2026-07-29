@@ -9,11 +9,12 @@ const badgeConfig = {
 };
 
 export default function ProductModal({ product, onClose }) {
-  const [selectedSize, setSelectedSize] = useState('medium');
+  // Massivdagi 1-narxning indeksi (0) bo'yicha boshlanadi
+  const [selectedIndex, setSelectedIndex] = useState(0);
 
   useEffect(() => {
     if (!product) return;
-    setSelectedSize('medium');
+    setSelectedIndex(0);
     const onKey = (e) => e.key === 'Escape' && onClose();
     document.body.style.overflow = 'hidden';
     window.addEventListener('keydown', onKey);
@@ -28,10 +29,16 @@ export default function ProductModal({ product, onClose }) {
   const badge = product?.badge ? badgeConfig[product.badge] : null;
   const BadgeIcon = badge?.icon;
 
-  // Narx obyekt yoki oddiy raqam ekanligini xavfsiz tekshirish
-  const currentPrice = product.price && typeof product.price === 'object'
-    ? product.price[selectedSize]
-    : product.price;
+  // Narx massiv, obyekt yoki oddiy son ekanligini aniqlab olish
+  const getPricesArray = () => {
+    if (!product.price) return [];
+    if (Array.isArray(product.price)) return product.price;
+    if (typeof product.price === 'object') return Object.values(product.price);
+    return [product.price];
+  };
+
+  const prices = getPricesArray();
+  const currentPrice = prices[selectedIndex] !== undefined ? prices[selectedIndex] : prices[0];
 
   return (
     <AnimatePresence>
@@ -77,29 +84,25 @@ export default function ProductModal({ product, onClose }) {
               {product.name}
             </h2>
 
-            {/* O'lchamni tanlash (Faqat narx obyekt bo'lsa chiqadi) */}
-            {product.price && typeof product.price === 'object' && (
+            {/* Narx variantlarini tanlash tugmalari (so'zlar o'rniga to'g'ridan-to'g'ri narxlar chiqadi) */}
+            {prices.length > 1 && (
               <div className="mt-5">
                 <span className="text-xs font-semibold uppercase tracking-wider text-charcoal/40">
-                  O'lchamni tanlang
+                  Narxni tanlang
                 </span>
-                <div className="mt-2 grid grid-cols-3 gap-3">
-                  {[
-                    { key: 'small', label: 'Kichik' },
-                    { key: 'medium', label: "O'rta" },
-                    { key: 'large', label: 'Katta' },
-                  ].map((size) => (
+                <div className="mt-2 grid grid-cols-4 gap-2">
+                  {prices.map((priceVal, index) => (
                     <button
-                      key={size.key}
+                      key={index}
                       type="button"
-                      onClick={() => setSelectedSize(size.key)}
-                      className={`rounded-2xl py-2.5 text-sm font-medium transition-all ${
-                        selectedSize === size.key
+                      onClick={() => setSelectedIndex(index)}
+                      className={`rounded-2xl py-2.5 text-xs sm:text-sm font-semibold transition-all ${
+                        selectedIndex === index
                           ? 'bg-softyellow-400 text-charcoal shadow-soft ring-2 ring-softyellow-500'
                           : 'bg-white text-charcoal/70 hover:bg-beige/50'
                       }`}
                     >
-                      {size.label}
+                      {formatPrice(priceVal)}
                     </button>
                   ))}
                 </div>
@@ -107,7 +110,7 @@ export default function ProductModal({ product, onClose }) {
             )}
 
             <div className="mt-7 flex items-center justify-between border-t border-beige pt-5">
-              <span className="text-sm text-charcoal/50">Narxi</span>
+              <span className="text-sm text-charcoal/50">Tanlangan narx</span>
               <span className="font-display text-2xl font-bold text-charcoal">
                 {formatPrice(currentPrice)}
               </span>

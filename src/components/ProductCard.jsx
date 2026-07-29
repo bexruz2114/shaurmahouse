@@ -11,11 +11,20 @@ export default function ProductCard({ product, onSelect }) {
   const badge = product.badge ? badgeConfig[product.badge] : null;
   const BadgeIcon = badge?.icon;
 
-  const displayPrice = product.price && typeof product.price === 'object' 
-    ? product.price.small 
-    : product.price;
+  // Narx massiv, obyekt yoki oddiy son ekanligini tekshirib, boshlang'ich narxni olish
+  const getDisplayPrice = () => {
+    if (!product.price) return 0;
+    if (Array.isArray(product.price)) {
+      return product.price[0]; // Massiv bo'lsa 1-elementi
+    }
+    if (typeof product.price === 'object') {
+      return product.price.small || Object.values(product.price)[0] || 0; // Obyekt bo'lsa small yoki birinchisi
+    }
+    return product.price; // Oddiy son bo'lsa o'zi
+  };
 
-  const isObjectPrice = product.price && typeof product.price === 'object';
+  const displayPrice = getDisplayPrice();
+  const isMultiplePrice = product.price && typeof product.price === 'object';
 
   return (
     <motion.button
@@ -53,7 +62,7 @@ export default function ProductCard({ product, onSelect }) {
         </p>
         <div className="mt-4 flex items-center justify-between pt-1">
           <div className="flex items-baseline gap-1">
-            {isObjectPrice && <span className="text-xs text-charcoal/50">dan</span>}
+            {isMultiplePrice && <span className="text-xs text-charcoal/50">dan</span>}
             <span className="text-sm sm:text-base font-bold text-charcoal">
               {formatPrice(displayPrice)}
             </span>

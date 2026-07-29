@@ -1,9 +1,9 @@
-import { Phone, Instagram, Send } from 'lucide-react';
+import { Phone, Instagram, Send, Search } from 'lucide-react';
 import { motion } from 'framer-motion';
 import logo1 from "../assets/logo1.png";
 import useScrolled from '../hooks/useScrolled';
 
-export default function Header({ categories, activeCategory, onSelectCategory, onOpenMenu, CONTACT }) {
+export default function Header({ categories, activeCategory, onSelectCategory, onOpenMenu, CONTACT, search, onSearchChange }) {
   const scrolled = useScrolled(40);
 
   return (
@@ -23,6 +23,18 @@ export default function Header({ categories, activeCategory, onSelectCategory, o
             <img src={logo1} alt="Logo" className="h-9 w-9 lg:h-11 lg:w-11" />
           </a>
         )}
+
+        {/* Qidiruv inputi (Hech narsa o'chirilmagan, ustiga qo'shildi) */}
+        <div className="relative hidden md:flex items-center flex-1 max-w-xs mx-4">
+          <Search className="absolute left-3.5 h-4 w-4 text-charcoal/40" />
+          <input
+            type="text"
+            value={search}
+            onChange={(e) => onSearchChange(e.target.value)}
+            placeholder="Taomlarni qidirish..."
+            className="w-full rounded-full bg-beige/60 pl-10 pr-4 py-2 text-sm text-charcoal outline-none transition-all focus:bg-white focus:ring-2 focus:ring-softyellow-300"
+          />
+        </div>
 
         {/* Desktop categories */}
         <nav className="hidden items-center gap-1 lg:flex">
